@@ -1,0 +1,91 @@
+/**
+* Project Name: ICCI BANK PRUEBA
+* User: leslie_406760
+* Date: Oct 10, 2012
+*/
+
+package com.infy.icci.service;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import com.infy.icci.entity.SchemeEntity;
+import com.infy.icci.transferObjects.CardTO;
+import com.infy.icci.transferObjects.CustomerTO;
+import com.infy.icci.transferObjects.SchemeTO;
+
+/**
+ * 
+* Project Name: ICCI BANK
+* User: juan_406752, leslie_406760
+* Date: Oct 11, 2012
+ */
+
+public class SchemeService {
+	
+	private EntityManagerFactory emf;
+	private EntityManager em;
+	
+	/**
+	 * 
+	* Constructor
+	 */
+	public SchemeService() {
+		emf=Persistence.createEntityManagerFactory("ICCI BANK");
+	}
+	
+	/**
+	 * 
+	* @Method Name: getSchemeDetails
+	* @Description: 
+	* @User: leslie_406760
+	* @Return Type: SchemeTO
+	* @param schemeTO
+	* @return
+	 * @throws Exception 
+	 */
+	public SchemeTO getSchemeDetails(SchemeTO schemeTO) throws Exception{
+		em=null;
+		SchemeTO schemeToResult = null;
+		try{			
+			em=emf.createEntityManager();
+			em.getTransaction().begin();
+			SchemeEntity entity = em.find(SchemeEntity.class, schemeTO.getSchemeId());
+			
+			if(entity != null){
+				schemeToResult = new SchemeTO();
+				schemeToResult.setInterestRate(entity.getInterestRate());
+				schemeToResult.setMinimumAmount(entity.getMinimumAmount());
+				schemeToResult.setSchemeAmount(entity.getSchemeAmount());
+				schemeToResult.setSchemeId(entity.getSchemeId());
+			}else{
+				System.out.println("In exception of service");
+				throw new Exception("Invalid Scheme");
+			}
+			return schemeToResult;
+		}finally{
+			if(em != null){
+				em.close();
+			}
+		}
+	}
+	/**
+	* 
+	* @Method Name: schemeChosen
+	* @Description: 
+	* @User: juan_406752
+	* @Return Type: boolean
+	* @param customerTO
+	* @return
+	*/
+	public boolean schemeChosen(CustomerTO customerTO){
+		//NEED TO BE IMPLEMENTED
+		return false;
+	}
+	
+	public void updateSchemeDetails(CardTO cardTO){
+		//NEED TO BE IMPLEMENTED
+	}
+	
+}

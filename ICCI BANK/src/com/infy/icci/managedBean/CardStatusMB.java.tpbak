@@ -1,0 +1,211 @@
+/*
+ * CardStatusMB.java
+ */
+package com.infy.icci.managedBean;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
+import com.infy.icci.transferObjects.ApprovedCardTO;
+import com.infy.icci.transferObjects.CardApplicationTO;
+
+/**
+* Project Name: ICCI BANK
+* User: andres_406763
+* Date: Oct 11, 2012
+*/
+public class CardStatusMB {
+
+	private Calendar fromDate;
+	private Calendar toDate;
+	private Long cardNo;
+	private List cardNoList;
+	private Double rejectedPercent;
+	private Double approvedPercent;
+	private List<CardApplicationTO> cardRejectedList;
+	private List<ApprovedCardTO> cardApprovedList;
+	
+	/**
+	* Constructor
+	*/
+	public CardStatusMB(){
+		cardRejectedList = new ArrayList<CardApplicationTO>();
+		cardApprovedList = new ArrayList<ApprovedCardTO>();
+	}
+	
+	/** 
+	* @Method Name: getCardNumbers
+	* @Description: 
+	* @User: andres_406763
+	* @Return Type: String
+	* @return
+	*/
+	public String getCardNumbers(){
+		return "";
+	}
+	
+	/**
+	* @Method Name: rejectedReport
+	* @Description: 
+	* @User: andres_406763
+	* @Return Type: String
+	* @return
+	*/
+	public String rejectedReport(){
+		return "";
+	}
+	
+	/**
+	* @Method Name: acceptedReport
+	* @Description: 
+	* @User: andres_406763
+	* @Return Type: String
+	* @return
+	*/
+	public String acceptedReport(){
+		return "";
+	}
+	
+	/**
+	* @Method Name: statusDetails
+	* @Description: 
+	* @User: andres_406763
+	* @Return Type: String
+	* @return
+	*/
+	public String statusDetails(){
+		return "";
+	}
+	
+	/**
+	 * @User andres_406763
+	 * @Method getFromDate
+	 * @return fromDate 
+	 */
+	public Calendar getFromDate() {
+		return fromDate;
+	}
+	/**
+	 * @User andres_406763
+	 * @Method setFromDate
+	 * @param fromDate the fromDate to set
+	 */
+	public void setFromDate(Calendar fromDate) {
+		this.fromDate = fromDate;
+	}
+	/**
+	 * @User andres_406763
+	 * @Method getToDate
+	 * @return toDate 
+	 */
+	public Calendar getToDate() {
+		return toDate;
+	}
+	/**
+	 * @User andres_406763
+	 * @Method setToDate
+	 * @param toDate the toDate to set
+	 */
+	public void setToDate(Calendar toDate) {
+		this.toDate = toDate;
+	}
+	/**
+	 * @User andres_406763
+	 * @Method getCardNo
+	 * @return cardNo 
+	 */
+	public Long getCardNo() {
+		return cardNo;
+	}
+	/**
+	 * @User andres_406763
+	 * @Method setCardNo
+	 * @param cardNo the cardNo to set
+	 */
+	public void setCardNo(Long cardNo) {
+		this.cardNo = cardNo;
+	}
+	/**
+	 * @User andres_406763
+	 * @Method getCardNoList
+	 * @return cardNoList 
+	 */
+	public List getCardNoList() {
+		return cardNoList;
+	}
+	/**
+	 * @User andres_406763
+	 * @Method setCardNoList
+	 * @param cardNoList the cardNoList to set
+	 */
+	public void setCardNoList(List cardNoList) {
+		this.cardNoList = cardNoList;
+	}
+	/**
+	 * @User andres_406763
+	 * @Method getRejectedPercent
+	 * @return rejectedPercent 
+	 */
+	public Double getRejectedPercent() {
+		return rejectedPercent;
+	}
+	/**
+	 * @User andres_406763
+	 * @Method setRejectedPercent
+	 * @param rejectedPercent the rejectedPercent to set
+	 */
+	public void setRejectedPercent(Double rejectedPercent) {
+		this.rejectedPercent = rejectedPercent;
+	}
+	/**
+	 * @User andres_406763
+	 * @Method getApprovedPercent
+	 * @return approvedPercent 
+	 */
+	public Double getApprovedPercent() {
+		return approvedPercent;
+	}
+	/**
+	 * @User andres_406763
+	 * @Method setApprovedPercent
+	 * @param approvedPercent the approvedPercent to set
+	 */
+	public void setApprovedPercent(Double approvedPercent) {
+		this.approvedPercent = approvedPercent;
+	}
+	/**
+	 * @User andres_406763
+	 * @Method getCardRejectedList
+	 * @return cardRejectedList 
+	 */
+	public List<CardApplicationTO> getCardRejectedList() {
+		return cardRejectedList;
+	}
+	/**
+	 * @User andres_406763
+	 * @Method setCardRejectedList
+	 * @param cardRejectedList the cardRejectedList to set
+	 */
+	public void setCardRejectedList(List<CardApplicationTO> cardRejectedList) {
+		this.cardRejectedList = cardRejectedList;
+	}
+	/**
+	 * @User andres_406763
+	 * @Method getCardApprovedList
+	 * @return cardApprovedList 
+	 */
+	public List<ApprovedCardTO> getCardApprovedList() {
+		return cardApprovedList;
+	}
+	/**
+	 * @User andres_406763
+	 * @Method setCardApprovedList
+	 * @param cardApprovedList the cardApprovedList to set
+	 */
+	public void setCardApprovedList(List<ApprovedCardTO> cardApprovedList) {
+		this.cardApprovedList = cardApprovedList;
+	}
+	
+	
+}

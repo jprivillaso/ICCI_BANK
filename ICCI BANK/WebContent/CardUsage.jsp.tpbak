@@ -1,0 +1,76 @@
+<%@taglib uri="http://java.sun.com/jsf/html" prefix="h"%><%@taglib
+	uri="http://java.sun.com/jsf/core" prefix="f"%><%@ page language="java"
+	contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" style="text/css" href="CSS/style.css">
+<title>View Card Usage</title>
+</head>
+<body>
+<f:view>
+	<center>
+	<div class="image"></div>
+	<h:form>
+		Note: You can view the last 6 transactions only
+		<h:panelGrid border="1" columns="2" styleClass="bigTable">
+			<f:facet name="header">
+				<h:outputLabel value="View Card Usage" styleClass="header"/>
+			</f:facet>
+			<h:selectOneRadio styleClass="static" value="#{cardUsageMB.option}"
+				valueChangeListener="#{cardUsageMB.populateMonths}"
+				onclick="submit()" style="width: 317px">
+				<f:selectItem itemValue="current" itemLabel="This Year" />
+				<f:selectItem itemValue="previous" itemLabel="Previous Year" />
+			</h:selectOneRadio>
+		</h:panelGrid>
+		</h:form>
+		<h:form>
+		<h:panelGrid border="1" columns="2" styleClass="bigTable">
+			<h:outputText value="Select The Month"></h:outputText>
+			<h:selectOneMenu value = "#{cardUsageMB.monthSelectedValue}">
+				<f:selectItem itemLabel="--SELECT--" itemDisabled="true" />
+				<f:selectItems value="#{cardUsageMB.displayList}" />
+			</h:selectOneMenu>
+		</h:panelGrid>
+		<br>
+		<h:outputLabel value = "#{cardUsageMB.message}"></h:outputLabel>
+		<br><br>
+		<h:commandButton value="Get Transaction" action="#{cardUsageMB.populateTable}" type="submit"></h:commandButton>
+		<br>
+		<br>
+		</h:form>
+		<h:dataTable border="1" value = "#{cardUsageMB.transactionList}" var = "trans">
+			<h:column id="column1">
+				<f:facet name="header">
+					<h:outputText value="TransactionId"></h:outputText>
+				</f:facet>
+				<h:outputText value = "#{trans.transactionId}"></h:outputText>
+			</h:column>
+			<h:column id="column2">
+				<f:facet name="header">
+					<h:outputText value="Date Of Transaction"></h:outputText>
+				</f:facet>
+				<h:outputText value = "#{trans.dateOfTransaction}">
+					<f:converter converterId="ConverterDates"/>
+				</h:outputText>
+			</h:column>
+			<h:column id="column3">
+				<f:facet name="header">
+					<h:outputText value="Description"></h:outputText>
+				</f:facet>
+				<h:outputText value = "#{trans.description}"></h:outputText>
+			</h:column>
+			<h:column id="column4">
+				<f:facet name="header">
+					<h:outputText value="Amount"></h:outputText>
+				</f:facet>
+				<h:outputText value = "#{trans.amount}"></h:outputText>
+			</h:column>
+		</h:dataTable><br>
+		<h:outputLink value="CustomerHomePage.jsp">Home</h:outputLink>
+	</center>
+</f:view>
+</body>
+</html>

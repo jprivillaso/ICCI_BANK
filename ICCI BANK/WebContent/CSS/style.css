@@ -1,0 +1,60 @@
+@CHARSET "ISO-8859-1";
+
+
+div.ui-datepicker{
+		font-size: 12px;
+	}
+
+.image{
+	background-image: url('UpperEdge.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 150px;
+	width: 600px;
+}
+
+h1,h2{ 
+	color: red;
+	text-align: center;
+}
+
+.header{
+	color: red;
+	text-align: center;
+	font-size: large;
+}
+
+.static{
+	color: brown;
+	text-align: center;
+}
+
+.bigTable{
+	color: brown;
+	border-width: medium;
+	border-color: red;
+	border-style: solid;
+	border-right-color: brown;
+	border-bottom-color: brown;
+	text-align: center;
+}
+
+.smallTable{
+	border-width: thin;
+	border-color: red;
+	border-style: solid;
+	border-right-color: brown;
+	border-bottom-color: brown;
+	text-align: center;
+}
+
+.random{
+	font-style: italic;
+	font-size:larger;
+	font-family: cursive;
+	color:red
+	
+}
+.cellsSize{
+	width: 40px;
+}
